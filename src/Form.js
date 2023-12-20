@@ -42,27 +42,5 @@ const Form = () => {
     </div>
   )
 }
-const users = [
-    { name: 'John Doe', age: 25 },
-    { name: 'Alexander', age: 17 },
-    { name: 'Nelson Mandela', age: 78 },
-    { name: 'Mahatma Gandhi', age: 56 },
-    { name: 'Nikol Tesla', age: 39 }
-  ];
-  
-  function sortAndDisplayNames() {
-    // Sort the array based on the 'age' property
-    const sortedUsers = users.slice().sort((a, b) => a.age - b.age);
-  
-    // Extract names from the sorted array
-    const sortedNames = sortedUsers.map(user => user.name);
-  
-    // Display the sorted names using window.alert
-    window.alert('Sorted Names:\n' + sortedNames.join('\n'));
-  }
-  
-  // Call the function when the sign-up button is clicked
-  // Replace 'signupButton' with the actual ID or class of your sign-up button
-  document.getElementById('signupButton').addEventListener('click', sortAndDisplayNames);
 
 export default Form
