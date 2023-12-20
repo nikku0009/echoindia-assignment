@@ -1,10 +1,35 @@
-import React from 'react'
+
+import React, { useState } from 'react';
+
 
 
   
 
 const Form = () => {
+
+    const [users, setUsers] = useState([
+        { name: 'John Doe', age: 25 },
+        { name: 'Alexander', age: 17 },
+        { name: 'Nelson Mandela', age: 78 },
+        { name: 'Mahatma Gandhi', age: 56 },
+        { name: 'Nikol Tesla', age: 39 }
+      ]);
+    
+      // Function to sort users by age and display names
+      const sortAndDisplayNames = () => {
+        // Sort the array based on the 'age' property
+        const sortedUsers = users.slice().sort((a, b) => a.age - b.age);
+    
+        // Extract names from the sorted array
+        const sortedNames = sortedUsers.map(user => user.name);
+    
+        // Display the sorted names using window.alert
+        window.alert('Sorted Names:\n' + sortedNames.join('\n'));
+        
+      };
+    
   return (
+
     
     <div className='bg-white px-10 py-20 rounded-3xl border-2 border-gray-100'>
         <h1 className='text-5xl font-semibold'>Welcome Back</h1>
@@ -36,11 +61,13 @@ const Form = () => {
             </div>
             <div className='mt-8 flex justify-center items-center'>
                 <p className='font-medium text-base'>Don't have an account? </p>
-                <button className='text-violet-500 text-base font-medium ml-2' id='signupButton'>Sign up</button>
+                <button onClick={sortAndDisplayNames} className='text-violet-500 text-base font-medium ml-2' id='signupButton'>Sign up</button>
             </div>
         </div>
     </div>
   )
 }
+
+
 
 export default Form
